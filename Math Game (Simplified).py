@@ -93,15 +93,14 @@ tl = Label(
 screen = Label(main, width=14, font=("Helvetica", 25, "bold"), bg="black", fg="white")
 
 
-for (i,r,p) in zip([tl,combobox],[1,2],[20,0]):
-	i.grid(row=r, columnspan=2, sticky="e", padx=110, pady=p)
-
+for (i, r, p) in zip([tl, combobox], [1, 2], [20, 0]):
+    i.grid(row=r, columnspan=2, sticky="e", padx=110, pady=p)
 
 
 def START(Expression):
 
     Random = random.sample(Range, 2)
-    
+
     Random = [str(x) for x in Random]
 
     if Expression == "all":
@@ -113,10 +112,12 @@ def START(Expression):
         option1 = eval(Random[0] + Expression + Random[1])
 
         option2 = eval(Random[0] + Expression + Random[1] + "+" + Random[0])
-        
+
         option3 = eval(Random[0] + Expression + Random[1] + "-" + Random[0])
 
-        option4 = eval(Random[0]+ Expression+ Random[1]+ "+"+Random[0]+ "-"+Random[1])
+        option4 = eval(
+            Random[0] + Expression + Random[1] + "+" + Random[0] + "-" + Random[1]
+        )
 
         Expression = "all"
 
@@ -129,10 +130,12 @@ def START(Expression):
         option1 = eval(Random[0] + Expression + Random[1])
 
         option2 = eval(Random[0] + Expression + Random[1] + "+" + Random[0])
-        
+
         option3 = eval(Random[0] + Expression + Random[1] + "-" + Random[0])
 
-        option4 = eval(Random[0]+ Expression+ Random[1]+ "+"+Random[0]+ "-"+Random[1])
+        option4 = eval(
+            Random[0] + Expression + Random[1] + "+" + Random[0] + "-" + Random[1]
+        )
 
     Random_Place_List = [option1, option2, option3, option4]
 
@@ -204,8 +207,8 @@ def Get_Combobox1():
                 label[7].grid()
                 break
         Choose_Expression = List.get(Choose_Expression)
-        
-        del List ["ALL"]
+
+        del List["ALL"]
 
         for i in [combobox, button[0], label[0], label[1], tl]:
             i.destroy()
